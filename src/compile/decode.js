@@ -137,8 +137,6 @@ function compileDecode (m, resolve, enc) {
               def = (def && val[def]) ? val[def].value : val[Object.keys(val)[0]].value
               obj[name] = parseInt(def || 0, 10)
             }
-          } else {
-            obj[name] = defaultValue(field, def)
           }
         }
 
