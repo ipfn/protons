@@ -1,10 +1,10 @@
 {
-  "name": "protons",
+  "name": "@ipfn/protons",
   "version": "1.0.0",
   "description": "Protocol Buffers for Node.js without compiliation",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dignifiedquire/protons"
+    "url": "https://github.com/ipfn/protons"
   },
   "dependencies": {
     "brfs": "^1.4.3",
@@ -32,9 +32,9 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/dignifiedquire/protons/issues"
+    "url": "https://github.com/ipfn/protons/issues"
   },
-  "homepage": "https://github.com/dignifiedquire/protons",
+  "homepage": "https://github.com/ipfn/protons",
   "main": "src/index.js",
   "directories": {
     "test": "test"
@@ -53,6 +53,10 @@
     "encodings",
     "encoding"
   ],
-  "author": "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
+  "contributors": [
+    "Mathias Buus",
+    "Friedel Ziegelmayer <ipfn@gmail.com>",
+    "Łukasz Kurowski <crackcomm@gmail.com>"
+  ],
   "license": "MIT"
 }
