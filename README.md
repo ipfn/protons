@@ -3,9 +3,9 @@
 [![Dependency Status](https://david-dm.org/dignifiedquire/protons.svg?style=flat-square)](https://david-dm.org/dignifiedquire/protons)
 [![Travis CI](https://travis-ci.org/dignifiedquire/protons.svg?branch=master)](https://travis-ci.org/dignifiedquire/protons)
 
-> [Protocol Buffers](https://developers.google.com/protocol-buffers/) for Node.js and the browser without compilation and `eval`.
+> [Protocol Buffers](https://developers.google.com/protocol-buffers/) for Node.js and the browser without compilation, `eval` and default values.
 >
-> Forked from [protocol-buffers](https://github.com/mafintos/protocol-buffers) to remove usage of `eval`.
+> Forked from [dignifiedquire/protons](https://github.com/dignifiedquire/protons) to remove usage of default values.
 
 ```
 > npm install protons
