@@ -4,7 +4,7 @@
 var varint = require('varint')
 var defined = require('./utils').defined
 
-function compileDecode (m, resolve, enc) {
+function compileDecode(m, resolve, enc) {
   var requiredFields = []
   var fields = {}
   var oneofFields = []
@@ -30,7 +30,7 @@ function compileDecode (m, resolve, enc) {
     }
   }
 
-  function decodeField (e, field, obj, buf, offset, i) {
+  function decodeField(e, field, obj, buf, offset, i) {
     var name = field.name
 
     if (field.oneof) {
@@ -71,7 +71,7 @@ function compileDecode (m, resolve, enc) {
     return offset
   }
 
-  return function decode (buf, offset, end) {
+  return function decode(buf, offset, end) {
     if (offset == null) {
       offset = 0
     }
@@ -194,36 +194,6 @@ var skip = function (type, buffer, offset) {
       return offset + 4
     default:
       throw new Error('Unknown wire type: ' + type)
-  }
-}
-
-var defaultValue = function (f, def) {
-  if (f.map) return {}
-  if (f.repeated) return []
-
-  switch (f.type) {
-    case 'string':
-      return def != null ? def : ''
-
-    case 'bool':
-      return def === 'true'
-
-    case 'float':
-    case 'double':
-    case 'sfixed32':
-    case 'fixed32':
-    case 'varint':
-    case 'enum':
-    case 'uint64':
-    case 'uint32':
-    case 'int64':
-    case 'int32':
-    case 'sint64':
-    case 'sint32':
-      return parseInt(def || 0, 10)
-
-    default:
-      return null
   }
 }
 
