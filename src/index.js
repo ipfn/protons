@@ -12,7 +12,7 @@ var flatten = function (values) {
   return result
 }
 
-module.exports = function (proto, opts) {
+function protons(proto, opts) {
   if (!opts) opts = {}
   if (!proto) throw new Error('Pass in a .proto string or a protobuf-schema parsed object')
 
@@ -37,3 +37,6 @@ module.exports = function (proto, opts) {
 
   return new Messages()
 }
+
+module.exports = protons;
+module.exports.default = protons;
