@@ -130,13 +130,11 @@ function compileDecode(m, resolve, enc) {
             continue
           }
 
-          if (val) { // is enum
-            if (field.repeated) {
-              obj[name] = []
-            } else {
-              def = (def && val[def]) ? val[def].value : val[Object.keys(val)[0]].value
-              obj[name] = parseInt(def || 0, 10)
-            }
+          if (val && !field.repeated) { // is enum
+            def = (def && val[def]) ? val[def].value : val[Object.keys(val)[0]].value
+            obj[name] = parseInt(def || 0, 10)
+          } else if (def) {
+            obj[name] = defaultValue(field, def)
           }
         }
 
@@ -170,6 +168,31 @@ function compileDecode(m, resolve, enc) {
         offset = decodeField(e, field, obj, buf, offset, i)
       }
     }
+  }
+}
+
+
+var defaultValue = function (field, def) {
+  switch (field.type) {
+    case 'string':
+      return def
+    case 'bool':
+      return def === 'true'
+    case 'float':
+    case 'double':
+    case 'sfixed32':
+    case 'fixed32':
+    case 'varint':
+    case 'enum':
+    case 'uint64':
+    case 'uint32':
+    case 'int64':
+    case 'int32':
+    case 'sint64':
+    case 'sint32':
+      return parseInt(def || 0, 10)
+    default:
+      return
   }
 }
 

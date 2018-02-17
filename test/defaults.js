@@ -22,15 +22,13 @@ tape('defaults decode', function (t) {
   t.same(Defaults.decode(b3), {
     num: 10,
     foo1: 2,
-    foo2: 2,
-    foos: []
+    foo2: 2
   }, '1 default')
 
   t.same(o1, {
     num: 42,
     foo1: 2,
-    foo2: 1,
-    foos: []
+    foo2: 1
   }, 'all defaults')
 
   t.same(Defaults.decode(b2), {
