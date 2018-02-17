@@ -1,6 +1,6 @@
 {
   "name": "@ipfn/protons",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Protocol Buffers for Node.js without compiliation",
   "repository": {
     "type": "git",
