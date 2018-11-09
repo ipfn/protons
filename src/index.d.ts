@@ -1,8 +1,10 @@
 
-declare function protons(desc: string, options?: { [key: string]: any }): any;
+type Descriptor = string | { [key: string]: any };
+
+declare function protons(desc: Descriptor, options?: { [key: string]: any }): any;
 
 declare namespace protons {
-  function protons(desc: string, options?: { [key: string]: any }): any;
+  function protons(desc: Descriptor, options?: { [key: string]: any }): any;
 }
 
 export = protons;

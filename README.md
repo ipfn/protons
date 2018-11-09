@@ -8,7 +8,7 @@
 > Forked from [dignifiedquire/protons](https://github.com/dignifiedquire/protons) to remove usage of default values.
 
 ```
-> npm install protons
+> npm install @ipfn/protons
 ```
 
 ## Usage
