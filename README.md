@@ -33,7 +33,7 @@ message AnotherOne {
 Use the above proto file to encode/decode messages by doing
 
 ``` js
-const protons = require('protons')
+const protons = require('@ipfn/protons')
 
 // pass a proto file as a buffer/string or pass a parsed protobuf-schema object
 const messages = protons(fs.readFileSync('test.proto'))
